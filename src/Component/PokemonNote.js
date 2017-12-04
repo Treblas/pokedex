@@ -5,10 +5,11 @@ import '../App.css';
   render() {
     return (
     <noteframe className="notePane">
+   
        <textarea 
           name="textarea"
           placeholder="Text here.." 
-          rows="7"
+          rows="13"
           cols="30"
           className="textarea" >
           </textarea>

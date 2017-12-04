@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import pokeball from '../images/p.png';
 import '../App.css';
 
 class PokemonSearch extends Component {
@@ -8,33 +7,30 @@ class PokemonSearch extends Component {
     return (
     
         <searchframe className="searchPane">
-              <img 
-                src={pokeball} 
-                className="pokeball" 
-                alt="PokeBall" />
-              <input 
-               onChange={this.props.handleChange}
-                type="text" 
-                placeholder="Search All Pokemon..." 
-                className="searchBox" 
-                 />
-              <button 
-                onClick={this.props.handleSearch}
-                className="searchButton" 
-                title="Go Search!">GO!
-              </button>
-              <br/> 
               <div className="searchDiv">
-                 <h2 className="log-title">POKEMON LIST</h2> 
-                 <table className="tableList">
-                  <tr>
-                    <th>Pokemon Name</th>
-                    <th>Type</th>
-                  </tr>
-                 </table>
+              <br /><br /><br />
+                <label className="searchText">
+                    Search For the Pokemon!
+                </label>
+
+              <br /><br /><br />
+                <input 
+                  onChange={this.props.handleChange}
+                  type="text" 
+                  placeholder="Search Pokemon..." 
+                  className="searchBox" 
+                 
+                  />
+                <br/><br/>  
+                <button 
+                  onClick={this.props.handleSearch}
+                  
+                  className="searchButton" 
+                  title="Go Search!">Search
+                </button>
+                <br/>
                </div>
                <div className="searchBottom">
-
                </div>
       </searchframe>
     );
