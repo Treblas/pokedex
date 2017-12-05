@@ -11,14 +11,29 @@ class App extends Component {
   state = {
       search: '',
       details: {},
-      moves: {}
+      moves: {},
+      notes: [],
+      note: ''
   }
 
-  handleChange(e){
-    this.setState({ search: e.target.value })
+  handleChange(/*props,*/ e){
+    //console.log(props)
+    this.setState({ /*[props]*/search: e.target.value })
   }
 
-  
+   handleSave(){
+      var obj ={
+        id:this.state.details.id,
+        note: this.state.note
+      }
+      this.setState({
+       notes: this.state.notes.concat(obj),
+       note: '' 
+     })
+      const {details, note, notes} = this.state
+      
+  }
+ 
   handleSearch(){
     const { search } = this.state
     var that = this
@@ -31,27 +46,7 @@ class App extends Component {
     })
   }
   
-  /*for checking
-  handleSearch(){
-    const { search } = this.state
-    var that = this
-     const url = 'http://pokeapi.co/api/v2/pokemon'
-    console.log('call api: ' , this.state.search)
-    request.get(`${url}/${search}`)
-    .end(function(err,res){
-       var moves = res.body.moves
-       var moveNames = moves.map(function(moveobj){
-      return moveobj.move
-    })
-      if(err) alert('error')
-       that.setState({ details: res.body})
-
-    })
  
-  }
-  */
- 
-/*bago*/
   render() {
     console.log(this.state)
     return (
@@ -62,10 +57,10 @@ class App extends Component {
         </header>
         <div className="mainSection">
              <PokemonSearch handleChange={this.handleChange.bind(this)}
-                handleSearch={this.handleSearch.bind(this)}
+                handleSearch={this.handleSearch.bind(this, 'note')}
                />
              <PokemonRender details={this.state.details} />
-             <PokemonNote />
+             <PokemonNote notes={this.state.notes}/>
         </div>
       </div>
     );

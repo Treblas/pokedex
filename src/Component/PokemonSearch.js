@@ -6,7 +6,7 @@ class PokemonSearch extends Component {
   render() {
     return (
     
-        <searchframe className="searchPane">
+        <div className="searchPane">
               <div className="searchDiv">
               <br /><br /><br />
                 <label className="searchText">
@@ -32,7 +32,7 @@ class PokemonSearch extends Component {
                </div>
                <div className="searchBottom">
                </div>
-      </searchframe>
+      </div>
     );
   }
 }

@@ -5,8 +5,10 @@ import '../App.css';
 
 class PokemonRender extends Component {
   state = { 
-     result: {} 
+     result: {}, 
+  
   }
+
   componentWillReceiveProps(nextProps){
     this.setState({ result: nextProps.details})
   }
@@ -66,7 +68,7 @@ class PokemonRender extends Component {
     const img = !sprites ? '' : sprites.front_shiny
     console.log(this.props, 'state: ', this.state)
     return (
-     <renderframe className="renderPane">
+     <div className="renderPane">
         <div className="renderTop">
           <img className="spriteImage" src={img}/>
            <div className="renderCenter">
@@ -98,7 +100,7 @@ class PokemonRender extends Component {
             
           </div>
          </div>
-      </renderframe>
+      </div>
     );
   }
 }
