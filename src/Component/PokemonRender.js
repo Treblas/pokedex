@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
  
+
+
 class PokemonRender extends Component {
   state = { 
      result: {} 
@@ -13,32 +15,33 @@ class PokemonRender extends Component {
     var move = []
     if(moves){
       moves.map((item, index) => {
-        if(index < 5){
+        if(index < 7){
           move = move.concat(<h4 key={index}><li>{item.move.name}</li></h4>)
         }
       })
     }
     return move
   }
-  renderBaseStats(basestats){
-    console.log(basestats)
-    var basestat = []
-    if(basestats){
-      basestats.map((item, index) => {
-        if(index < 6){
-          basestat = basestat.concat(<h4 key={index}><li>{item.base_stat}</li></h4>)
+  renderAbilities(abilities){
+    console.log(abilities)
+    var ability = []
+    if(abilities){
+      abilities.map((item, index) => {
+        if(index < 2){
+          ability = ability.concat(<h4 key={index}>{"- " + item.ability.name}</h4>)
         }
       })
     }
-    return basestat
+    return ability
   }
+  
   renderTypes(types){
     console.log(types)
     var type = []
     if(types){
       types.map((item, index) => {
-        if(index < 2){
-          type = type.concat(<h4 key={index}><li>{item.type.name}</li></h4>)
+        if(index < 1){
+          type = type.concat(<h4 className="h4" key={index}>{"Type :" + item.type.name}</h4>)
         }
       })
     }
@@ -48,6 +51,7 @@ class PokemonRender extends Component {
     console.log(stats)
     var stat = []
     var base_stat = []
+   
     if(stats){
       stats.map((item, index) => {
         if(index < 6){
@@ -57,13 +61,8 @@ class PokemonRender extends Component {
     }
     return stat
   }
-
-  
-  
-
   render() {
     const {id,sprites,abilities,moves,name,height,weight,types,stats,base_stat } = this.state.result
-  
     const img = !sprites ? '' : sprites.front_shiny
     console.log(this.props, 'state: ', this.state)
     return (
@@ -71,20 +70,34 @@ class PokemonRender extends Component {
         <div className="renderTop">
           <img className="spriteImage" src={img}/>
            <div className="renderCenter">
-               <br/><br/><br/><br/>
-               <div className="nameText">{name}</div>
-                <div className="heightText">Height : {height}</div>
-                <div className="weightText">Weight : {weight}</div>
-                <div className="moveText">
-                <u>Moves</u>{this.renderMoves(moves)}
+             <br/><br/><br/><br/>
+             <div className="nameText">
+             	{name}
+             </div>
+             <div className="heightText">
+             	Height : <b>{height}</b>
+             </div>
+             <div className="weightText">
+             	Weight : <b>{weight}</b>
+             </div>
+             <div className="moveText">
+                <u>Moves</u><br/>{this.renderMoves(moves)}
               </div>
-              <div className="typeText">Types : {this.renderTypes(types)}</div>
-              <div className="idText"> #{id}</div>
-              <div className="statText">Statistics{this.renderStats(stats)}</div>
-              <div className="statText">{this.renderBaseStats(base_stat)}</div> 
- 
+             <div className="typeText">
+             	{this.renderTypes(types)}
+             </div>
+             <div className="idText"> 
+             	#{id}
+             </div>
+             <div className="statText">
+             	<u>Statistics</u>{ this.renderStats(stats)}
+             </div>
+             <div className="abilitiesText">
+             	<u>Abilities</u><br/>{ this.renderAbilities(abilities)}
+             </div>
+            
           </div>
-          </div>
+         </div>
       </renderframe>
     );
   }

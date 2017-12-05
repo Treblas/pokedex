@@ -178,11 +178,14 @@
 
 }
 .spriteImage{
-  width:190px;
-  height:200px;
-  margin-left:105px;
+  margin-left:100px;
   float:left;
-  margin-top:110px; 
+  margin-top:120px; 
+  /*background-color:maroon;*/
+  background-image: url('./images/metal.png');
+  background-size:100% 200px;
+  width:200px;
+  border-radius: 50%;
 }
 .renderText{
   font-size:20px;
@@ -190,32 +193,52 @@
   text-transform: uppercase;
   letter-spacing:8px;
   color:white;
-
 }
 .heightText{
   font-size:13.5px;
   text-transform: capitalize;
-  letter-spacing:3px;
+  letter-spacing:1px;
   color:white;
   position:absolute;
-  top:638px;
+  top:538px;
  /* top:640px;*/
-  margin-left:280px;
+  margin-left:270px;
   font-weight:bold;
 
+}
+b{
+  text-align:right;
+
+}
+.weightText{
+  font-size:13.5px;
+  text-transform: capitalize;
+  letter-spacing:1px;
+  color:white;
+  position:absolute;
+ /*top:660px;*/
+ top:560px;
+  margin-left:270px;
+  font-weight:bold;
+
+}
+
+.h4{
+  display:inline-block;
 }
 .typeText{
   text-transform: capitalize;
   letter-spacing:2px;
-  color:gray;
+  color:skyblue;
   position:absolute;
-    top:640px;
+  top:225px;
   /*top:690px;*/
-  margin-left:145px;
+  margin-left:215px;
   font-weight:bold;
   text-align:left;
-  font-size:13.5px;
+  font-size:15px;
   line-height: 10px;
+  text-shadow: 1px 1px 1px black;
 }
 .idText{
   font-size:40px;
@@ -231,34 +254,54 @@
 }
 .statText{
   position: absolute;
-  top:320px;
-  margin-left:10px;
-  font-size:13px;
-  text-align:left;
-  color:white;
-  text-transform: capitalize;
-
-}
-.baseTet{
-  position: absolute;
-  top:320px;
-  margin-left:20px;
+  top:640px;
+  margin-left:140px;
   font-size:12px;
   text-align:left;
-  color:red;
-}
-.weightText{
-  font-size:13.5px;
-  text-transform: capitalize;
-  letter-spacing:3px;
   color:white;
-  position:absolute;
- /*top:660px;*/
- top:660px;
-  margin-left:280px;
+  line-height:7.5px;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 2px black;
   font-weight:bold;
 
 }
+.abilitiesText{
+  position: absolute;
+  top:640px;
+  margin-left:270px;
+  font-size:12px;
+  text-align:left;
+  color: #adad85;
+  line-height:7.5px;
+  text-transform: capitalize;
+  font-weight:bold;
+
+}
+.buttonStats{
+  background-color: black;
+  color:white;
+  opacity:0.5;
+  border:none;
+  position:absolute;
+  top:470px;
+  left:640px;
+  height:50px;
+  width:120px;
+}
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 0%;
+    height: 66px;
+    background-color: gold;
+    color:black;
+    font-weight:bolder;
+    font-size:30px;
+    padding:12px;
+}
+
 .right{
   float:right;
 }
@@ -273,10 +316,23 @@
   top:600px;
   margin-left:120px;
 }
+.abilityText{
+  color:maroon;
+  font-size:12px;
+  text-transform: capitalize;
+  letter-spacing:2px;
+  text-shadow:1px 1px 1px white;
+  position:absolute;
+  top:638px;
+  font-weight: bolder;
+  margin-left:240px;
+  /*background: linear-gradient(to right, #ffffff 5%, #666633 95%);
+*/
+}
 .titleText{
   color:white;
    font-size:20px;
-  margin-top:45px;
+  margin-top:42px;
   text-transform: uppercase;
   letter-spacing:8px;
   color:white;
@@ -285,10 +341,10 @@
 }
 .moveText{
   text-align:left;
-  font-size:13.5px;
+  font-size:12px;
   color:yellow;
   text-shadow: 1px 1px 1px black;
-  line-height:10px;
+  line-height:5px;
   font-weight:bold;
   top:640px;
   margin-left:20px;

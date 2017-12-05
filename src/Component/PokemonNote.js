@@ -9,7 +9,7 @@ import '../App.css';
        <textarea 
           name="textarea"
           placeholder="Text here.." 
-          rows="13"
+          rows="13  "
           cols="30"
           className="textarea" >
           </textarea>
