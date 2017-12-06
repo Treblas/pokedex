@@ -65,16 +65,25 @@
     margin-left:30px;
     font-size:16px;
     width:80%;
-   height:25%;
+   height:20%;
 }
 .Notes{
   background-image:url('./images/metal.png');
-  height:100px;
-  width:250px;
-  margin-top:330px;
-  margin-left:40px;
+  height:145px;
+  width:270px;
+  margin-top:10px;
+  margin-left:30px;
+  font-size:12px;
+  border-bottom-right-radius: 20px;
+  overflow:auto;
+  color:white; 
 }
-
+.titleNote{
+  font-size:16px;
+  letter-spacing:3px;
+  color:maroon;
+  text-shadow: 1px 1px 1px white;
+}
 .noteText{
   background-image: url('./notec.png');
    background-size:100% 100%;
@@ -208,7 +217,7 @@
   letter-spacing:1px;
   color:white;
   position:absolute;
-  top:538px;
+  top:738px;
  /* top:640px;*/
   margin-left:270px;
   font-weight:bold;
@@ -225,7 +234,7 @@ b{
   color:white;
   position:absolute;
  /*top:660px;*/
- top:560px;
+ top:760px;
   margin-left:270px;
   font-weight:bold;
 
@@ -247,6 +256,13 @@ b{
   font-size:15px;
   line-height: 10px;
   text-shadow: 1px 1px 1px black;
+}
+.notepad{
+  width:220px;
+  height:95px;
+  color:black;
+  background-color: transparent;
+  border:2px solid black;
 }
 .idText{
   font-size:40px;
@@ -292,9 +308,17 @@ b{
   border:none;
   height:36px;
   width:120px;
-  margin-top:25px;
+  margin-top:10px;
   font-weight:bolder;
+  border:2px solid white;
+  letter-spacing: 5px;
 }
+
+.buttonStats:hover{
+  background-color: white;
+  color:black;
+}
+
 #myProgress {
     width: 100%;
     background-color: grey;

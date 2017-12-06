@@ -9,29 +9,26 @@ class PokemonSearch extends Component {
         <div className="searchPane">
               <div className="searchDiv">
               <br /><br /><br />
-                <label className="searchText">
+              <label className="searchText">
                     Search For the Pokemon!
-                </label>
-
+              </label>
               <br /><br /><br />
                 <input 
                   onChange={this.props.handleChange}
                   type="text" 
                   placeholder="Search Pokemon..." 
-                  className="searchBox" 
-                 
+                  className="searchBox"  
                   />
-                <br/><br/>  
-                <button 
+              <br/><br/>  
+              <button 
                   onClick={this.props.handleSearch}
-                  
                   className="searchButton" 
                   title="Go Search!">Search
-                </button>
-                <br/>
-               </div>
-               <div className="searchBottom">
-               </div>
+              </button>
+              <br/>
+              </div>
+              <div className="searchBottom">
+              </div>
       </div>
     );
   }

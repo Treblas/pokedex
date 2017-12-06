@@ -12,8 +12,7 @@ class PokemonRender extends Component {
   componentWillReceiveProps(nextProps){
     this.setState({ result: nextProps.details})
   }
-  renderMoves(moves){
-    console.log(moves)
+ renderMoves(moves){
     var move = []
     if(moves){
       moves.map((item, index) => {
@@ -23,13 +22,12 @@ class PokemonRender extends Component {
       })
     }
     return move
-  }
+  } 
   renderAbilities(abilities){
-    console.log(abilities)
     var ability = []
     if(abilities){
       abilities.map((item, index) => {
-        if(index < 2){
+        if(index < 3){
           ability = ability.concat(<h4 key={index}>{"- " + item.ability.name}</h4>)
         }
       })
@@ -38,7 +36,6 @@ class PokemonRender extends Component {
   }
   
   renderTypes(types){
-    console.log(types)
     var type = []
     if(types){
       types.map((item, index) => {
@@ -50,10 +47,7 @@ class PokemonRender extends Component {
     return type
   }
    renderStats(stats){
-    console.log(stats)
     var stat = []
-    var base_stat = []
-   
     if(stats){
       stats.map((item, index) => {
         if(index < 6){
@@ -64,13 +58,13 @@ class PokemonRender extends Component {
     return stat
   }
   render() {
-    const {id,sprites,abilities,moves,name,height,weight,types,stats,base_stat } = this.state.result
-    const img = !sprites ? '' : sprites.front_shiny
+    const {id,sprites,abilities,moves,name,height,weight,types,stats} = this.state.result
+    const img = !sprites ? '' : sprites.front_default
     console.log(this.props, 'state: ', this.state)
     return (
      <div className="renderPane">
         <div className="renderTop">
-          <img className="spriteImage" src={img}/>
+          <img className="spriteImage" alt="" src={img}/>
            <div className="renderCenter">
              <br/><br/><br/><br/>
              <div className="nameText">
